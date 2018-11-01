@@ -6,7 +6,7 @@ export class EducationalBackgroundModel {
   private _center: string;
   private _description: string;
 
-	constructor(educationalBackground: number, name: string, startDate: string, endDate: string, center: string, description: string) {
+  constructor(educationalBackground: number, name: string, startDate: string, endDate: string, center: string, description: string) {
 		this._educationalBackground = educationalBackground;
 		this._name = name;
 		this._startDate = startDate;
