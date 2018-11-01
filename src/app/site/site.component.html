@@ -1,3 +1,12 @@
-<p>
-  site works!
-</p>
+<div class="container">
+  <mat-card>
+    <app-header [fullName]="fullName"
+      [email]="email"
+      [website]="website"></app-header>
+    <app-profile [fullName]="fullName"
+      [year]=year
+      [country]=country
+      [city]=city>
+    </app-profile>
+  </mat-card>
+</div>
