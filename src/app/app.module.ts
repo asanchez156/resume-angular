@@ -5,6 +5,7 @@ import { APP_ROUTES } from './app.routes';
 
 import { AppComponent } from './app.component';
 import { SiteModule } from './site/site.module';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { SiteModule } from './site/site.module';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     RouterModule.forRoot(APP_ROUTES),
     SiteModule
   ],

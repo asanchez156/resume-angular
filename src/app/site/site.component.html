@@ -1,4 +1,5 @@
-<div class="container">
+<app-loading-container [loading]=loading></app-loading-container>
+<div *ngIf="!loading && resume" class="container">
   <mat-card>
     <app-header [fullName]="fullName"
       [email]="email"
@@ -8,5 +9,10 @@
       [country]=country
       [city]=city>
     </app-profile>
+  </mat-card>
+</div>
+<div *ngIf="!loading && !resume" class="container">
+  <mat-card>
+     {{message}}
   </mat-card>
 </div>
