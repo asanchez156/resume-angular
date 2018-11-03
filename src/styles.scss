@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+// @import "src/styles/variables.scss";
+
+body {
+  margin: 0;
+  min-width: 54rem;
+  font-family: "Google Sans",Arial,sans-serif;
+}

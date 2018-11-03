@@ -36,10 +36,10 @@ export class SiteComponent implements OnInit {
       this.resumeService.getJSON(resumeName).subscribe((response: Response) => {
         const resume = response.json().resume;
         if (resume[resumeLang]) {
-          // const usedLanguage = ViewConfig.SUPPORTED_LANGUAGES[resumeLang] ? resumeLang : ViewConfig.DEFAULT_LANG;
-          // this.translateService.use(usedLanguage);
-          resume[resumeLang].personalInfo = resume.personalInfo;
-          this._resume = resume[resumeLang];
+          const usedLanguage = ViewConfig.SUPPORTED_LANGUAGES[resumeLang] ? resumeLang : ViewConfig.DEFAULT_LANG;
+          this.translateService.use(usedLanguage);
+          resume[usedLanguage].personalInfo = resume.personalInfo;
+          this._resume = resume[usedLanguage];
         } else {
           resume[ViewConfig.DEFAULT_LANG].personalInfo = resume.personalInfo;
           this._resume = resume[ViewConfig.DEFAULT_LANG];

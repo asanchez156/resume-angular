@@ -1,3 +1,17 @@
-h1, .email, .website {
-  color: aqua;
+.title-full-name {
+  text-align: center;
+}
+.info {
+  margin: auto;
+}
+.email, .website {
+  color: #52A9CC;
+  cursor: pointer;
+  opacity: .8;
+  &:hover {
+    opacity: 1;
+  }
+  &:active {
+    opacity: .8;
+  }
 }

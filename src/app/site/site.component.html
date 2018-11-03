@@ -1,11 +1,17 @@
 <app-loading-container *ngIf="loading" [loading]=loading></app-loading-container>
 <div class="container">
   <mat-card *ngIf="!loading && resume">
-    <app-header [personalInfo]="resume.personalInfo"></app-header>
-    <app-profile [personalInfo]="resume.personalInfo"
-      [personalExtraInfo]="resume.personalExtraInfo"></app-profile>
+    <mat-card-title>
+      <app-header [personalInfo]="resume.personalInfo"></app-header>
+    </mat-card-title>
+    <mat-card-content>
+      <app-profile [personalInfo]="resume.personalInfo" [personalExtraInfo]="resume.personalExtraInfo"></app-profile>
+    </mat-card-content>
+    <mat-card-footer>
+      linkedin - twitter - web
+    </mat-card-footer>
   </mat-card>
   <mat-card *ngIf="!loading && !resume">
     {{message}}
- </mat-card>
+  </mat-card>
 </div>

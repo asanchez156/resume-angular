@@ -15,4 +15,11 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
+  mailTo() {
+    window.location.href = `mailto:${this.personalInfo.contactInfo.email.address}`;
+  }
+  openPage() {
+    window.open(this.personalInfo.contactInfo.webSite.url);
+  }
+
 }

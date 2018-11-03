@@ -1,16 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoadingContainerComponent } from './loading-container/loading-container.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FullHeightDirective } from './directives/full-height.directive';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FlexLayoutModule
   ],
   declarations: [
-    LoadingContainerComponent
+    LoadingContainerComponent,
+    FullHeightDirective
   ],
   exports: [
-    LoadingContainerComponent
+    LoadingContainerComponent,
+    FullHeightDirective,
+    FlexLayoutModule
   ]
 })
 export class SharedModule { }
