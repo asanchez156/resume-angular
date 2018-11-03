@@ -1,3 +1,4 @@
+import { PersonalInfoModel } from './../../../core/models/personal-info.model';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -7,9 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  @Input() fullName: string;
-  @Input() email: string;
-  @Input() website: string;
+  @Input() personalInfo: PersonalInfoModel;
 
   constructor() { }
 

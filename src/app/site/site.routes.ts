@@ -9,6 +9,10 @@ export const ROUTES: Routes = [
   {
     path: 'resume/:name/:lang',
     component: SiteComponent
+  },
+  {
+    path: 'resume/:name',
+    component: SiteComponent
   }
 ];
 

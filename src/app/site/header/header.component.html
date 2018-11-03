@@ -1,15 +1,15 @@
 <div fxLayout="row" fxLayoutAlign="start start">
   <div fxFlex>
     <h1>
-      {{ fullName }}
+      {{ personalInfo.name }} {{ personalInfo.surname }}
     </h1>
   </div>
   <div fxFlex>
     <div class="email">
-        {{ email }}
+        {{ personalInfo.contactInfo.email.address }}
     </div>
     <div class="website">
-        {{ website }} 
+        {{ personalInfo.contactInfo.webSite.url }} 
     </div>
   </div>
 </div>

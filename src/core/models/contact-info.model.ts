@@ -6,13 +6,13 @@ export class ContactInfoModel {
     private _contactInfo: number;
     private _email: EmailModel;
     private _socialNetworks: SocialNetworkModel[];
-    private _website: WebsiteModel;
+    private _webSite: WebsiteModel;
 
-    constructor(contactInfo: number, email: EmailModel, socialNetworks: SocialNetworkModel[], website: WebsiteModel) {
+    constructor(contactInfo: number, email: EmailModel, socialNetworks: SocialNetworkModel[], webSite: WebsiteModel) {
         this._contactInfo = contactInfo;
         this._email = email;
         this._socialNetworks = socialNetworks;
-        this._website = website;
+        this._webSite = webSite;
     }
 
     /**
@@ -43,8 +43,8 @@ export class ContactInfoModel {
      * Getter website
      * @return {WebsiteModel}
      */
-    public get website(): WebsiteModel {
-        return this._website;
+    public get webSite(): WebsiteModel {
+        return this._webSite;
     }
 
     /**
@@ -75,8 +75,8 @@ export class ContactInfoModel {
      * Setter website
      * @param {WebsiteModel} value
      */
-    public set website(value: WebsiteModel) {
-        this._website = value;
+    public set webSite(value: WebsiteModel) {
+        this._webSite = value;
     }
 
 }

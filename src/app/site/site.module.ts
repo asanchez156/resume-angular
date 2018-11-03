@@ -7,6 +7,7 @@ import { MatCardModule } from '@angular/material/card';
 import { HeaderComponent } from './header/header.component';
 import { ProfileComponent } from './profile/profile.component';
 import { mySiteRoutes } from './site.routes';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -14,7 +15,9 @@ import { mySiteRoutes } from './site.routes';
     SharedModule,
     MatCardModule,
     // routes
-    mySiteRoutes
+    mySiteRoutes,
+    // translate
+    TranslateModule
   ],
   declarations: [
     SiteComponent,

@@ -1,4 +1,6 @@
+import { PersonalExtraInfoModel } from './../../../core/models/personal-extra-info.model';
 import { Component, OnInit, Input } from '@angular/core';
+import { PersonalInfoModel } from 'src/core/models';
 
 @Component({
   selector: 'app-profile',
@@ -7,10 +9,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  @Input() fullName: string;
-  @Input() year: string;
-  @Input() country: string;
-  @Input() city: string;
+  @Input() personalInfo: PersonalInfoModel;
+  @Input() personalExtraInfo: PersonalExtraInfoModel;
 
   constructor() { }
 

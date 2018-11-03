@@ -1,0 +1,23 @@
+{
+  "resume": {
+    "sections": {
+      "profile": "Perfil",
+      "educationalBackground": "Educational background"
+    },
+    "profile": {
+      "name": "Name",
+      "surname": "Surname",
+      "birthYear": "Birth year",
+      "city": "City",
+      "country": "Country"
+    },
+    "educationalBackground": {
+      "school": "School"
+    }
+  },
+  "error": {
+    "languageDoNotExist": "Language does not exist!'",
+    "resumeDoNotExist": "Resume does not exist!'",
+    "pathUse": "Go to: 'resume/resume-name/lang'"
+  }
+}

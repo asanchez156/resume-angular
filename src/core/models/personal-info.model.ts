@@ -4,14 +4,19 @@ export class PersonalInfoModel {
     private _personalInfo: number;
     private _name: string;
     private _surname: string;
+    private _birthDate: string;
+    private _city: string;
     private _image: string; // path to image
     private _contactInfo: ContactInfoModel;
 
 
-    constructor(personalInfo: number, name: string, surname: string, image: string, contactInfo: ContactInfoModel) {
+    constructor(personalInfo: number, name: string, surname: string, birthDate: string, city: string, image: string,
+        contactInfo: ContactInfoModel) {
         this._personalInfo = personalInfo;
         this._name = name;
         this._surname = surname;
+        this._birthDate = birthDate;
+        this._city = city;
         this._image = image;
         this._contactInfo = contactInfo;
     }
@@ -38,6 +43,22 @@ export class PersonalInfoModel {
      */
     public get surname(): string {
         return this._surname;
+    }
+
+    /**
+     * Getter birthDate
+     * @return {string}
+     */
+    public get birthDate(): string {
+        return this._birthDate;
+    }
+
+    /**
+     * Getter city
+     * @return {string}
+     */
+    public get city(): string {
+        return this._city;
     }
 
     /**
@@ -81,6 +102,22 @@ export class PersonalInfoModel {
     }
 
     /**
+     * Setter birthDate
+     * @param {string} value
+     */
+    public set birthDate(value: string) {
+        this._birthDate = value;
+    }
+
+    /**
+     * Setter city
+     * @param {string} value
+     */
+    public set city(value: string) {
+        this._city = value;
+    }
+
+    /**
      * Setter image
      * @param {string} value
      */
@@ -96,8 +133,4 @@ export class PersonalInfoModel {
         this._contactInfo = value;
     }
 
-
-    get fullName(): string {
-        return this._name + ' ' + this._surname;
-    }
 }

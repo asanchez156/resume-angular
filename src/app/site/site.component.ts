@@ -1,3 +1,5 @@
+import { ViewConfig } from './../config/view.config';
+import { TranslateService } from '@ngx-translate/core';
 import { PersonalInfoModel } from './../../core/models/personal-info.model';
 import { ResumeService } from './services/resume.service';
 import { ResumeModel } from './../../core/models/resume.model';
@@ -15,18 +17,15 @@ export class SiteComponent implements OnInit {
 
   message: string;
 
-  resume: ResumeLangModel;
+  private _resume: ResumeLangModel;
   loading = true;
 
-  fullName = 'fullname';
-  email = 'email';
-  website = 'website';
-
-  year = 'year';
-  country = 'country';
-  city = 'city';
+  get resume(): ResumeLangModel {
+    return this._resume;
+  }
 
   constructor(private resumeService: ResumeService,
+    private translateService: TranslateService,
     private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -37,27 +36,25 @@ export class SiteComponent implements OnInit {
       this.resumeService.getJSON(resumeName).subscribe((response: Response) => {
         const resume = response.json().resume;
         if (resume[resumeLang]) {
-          this.resume = resume[resumeLang];
-          this.resume.personalInfo = resume.personalInfo;
-          this.setVars();
+          // const usedLanguage = ViewConfig.SUPPORTED_LANGUAGES[resumeLang] ? resumeLang : ViewConfig.DEFAULT_LANG;
+          // this.translateService.use(usedLanguage);
+          resume[resumeLang].personalInfo = resume.personalInfo;
+          this._resume = resume[resumeLang];
         } else {
-          this.message = resumeLang + ' language does not exist!';
+          resume[ViewConfig.DEFAULT_LANG].personalInfo = resume.personalInfo;
+          this._resume = resume[ViewConfig.DEFAULT_LANG];
         }
-        console.log(this.resume);
+        console.log(this._resume);
         this.loading = false;
       }, err => {
         this.loading = false;
         if (!resumeName) {
-          this.message = 'Go to: \' resume/resume-name/lang \'';
+          this.translateService.get('error.pathUse', {resume: resumeName}).subscribe(res => this.message = res);
         } else {
-          this.message = resumeName + ' resume does not exist!';
+          this.translateService.get('error.resumeDoNotExist', {resume: resumeName}).subscribe(res => this.message = res);
         }
       });
     });
-  }
-
-  private setVars() {
-    this.fullName = this.resume.personalInfo.name + ' ' + this.resume.personalInfo.surname;
   }
 
 }
