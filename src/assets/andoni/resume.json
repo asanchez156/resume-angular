@@ -4,38 +4,39 @@
       "name": "Andoni",
       "surname": "Sánchez Antolín",
       "birthDate": "1992",
-      "cityTown": "Irún, Guipúzcoa",
+      "city": "Irún, Guipúzcoa",
       "contactInfo": {
         "email": {
-          "img": "images/email.png",
+          "image": "images/email.png",
           "address": "andoni.sanchez.antolin@gmail.com"
         },
-        "socialNetwork": [
+        "socialNetworks": [
           {
             "name": "LinkedIn",
             "username": "andonisanchezantolin",
-            "img": "images/linkedin.png",
+            "image": "images/linkedin.png",
             "url": "https://www.linkedin.com/in/andonisanchezantolin"
           },
           {
             "name": "GitHub",
             "username": "@asanchez156",
-            "img": "images/github.png",
+            "image": "images/github.png",
             "url": "https://github.com/asanchez156"
           },
           {
             "name": "Twitter",
             "username": "@andonisanchezz",
-            "img": "images/twitter.png",
+            "image": "images/twitter.png",
             "url": "https://twitter.com/andonisanchezz"
+          },
+          {
+            "name": "Web site",
+            "image": "images/site.png",
+            "url": "http://andonisanchez.eus/"
           }
-        ],
-        "webSite": {
-          "img": "images/site.png",
-          "url": "http://andonisanchez.eus/"
-        }
+        ]
       },
-      "image": "images/cv.png"
+      "image": "cv.png"
     },
     "es": {
       "personalExtraInfo": {
@@ -174,7 +175,7 @@
           {
             "motherTongue": true,
             "name": "Español",
-            "level": "C2"
+            "level": "Nativo"
           },
           {
             "motherTongue": true,
@@ -340,7 +341,7 @@
           {
             "motherTongue": true,
             "name": "Spanish",
-            "level": "C2"
+            "level": "Native"
           },
           {
             "motherTongue": true,

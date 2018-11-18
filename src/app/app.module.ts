@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { APP_ROUTES } from './app.routes';
 
 import { AppComponent } from './app.component';
-import { SiteModule } from './site/site.module';
+import { ResumeModule } from './site/resume.module';
 import { HttpModule } from '@angular/http';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { ViewConfig } from './config/view.config';
@@ -22,7 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     RouterModule.forRoot(APP_ROUTES),
     TranslateModule.forRoot(AppTranslateConfigService.Loader()),
-    SiteModule
+    ResumeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,12 +6,14 @@
   margin: 0 auto;
   max-width: 50rem;
   mat-card {
+    background-color: white;
     flex: 1;
     margin: 2rem;
-    background-color: #eeeeee;
-    border-radius: .2rem;
+    border-radius: .375rem;
+    padding: 1rem 2.5rem;
     mat-card-title {
       // height: #{$header-height};
+      margin-bottom: 2.3rem;
     }
     mat-card-content {
       // height: calc(100vh - 4rem - #{$header-height} - #{$footer-height});

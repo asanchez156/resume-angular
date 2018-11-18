@@ -1,18 +1,15 @@
 import { SocialNetworkModel } from './social-network.model';
 import { EmailModel } from './email.model';
-import { WebsiteModel } from './website.model';
 
 export class ContactInfoModel {
     private _contactInfo: number;
     private _email: EmailModel;
     private _socialNetworks: SocialNetworkModel[];
-    private _webSite: WebsiteModel;
 
-    constructor(contactInfo: number, email: EmailModel, socialNetworks: SocialNetworkModel[], webSite: WebsiteModel) {
+    constructor(contactInfo: number, email: EmailModel, socialNetworks: SocialNetworkModel[]) {
         this._contactInfo = contactInfo;
         this._email = email;
         this._socialNetworks = socialNetworks;
-        this._webSite = webSite;
     }
 
     /**
@@ -40,14 +37,6 @@ export class ContactInfoModel {
     }
 
     /**
-     * Getter website
-     * @return {WebsiteModel}
-     */
-    public get webSite(): WebsiteModel {
-        return this._webSite;
-    }
-
-    /**
      * Setter contactInfo
      * @param {number} value
      */
@@ -71,12 +60,5 @@ export class ContactInfoModel {
         this._socialNetworks = value;
     }
 
-    /**
-     * Setter website
-     * @param {WebsiteModel} value
-     */
-    public set webSite(value: WebsiteModel) {
-        this._webSite = value;
-    }
 
 }

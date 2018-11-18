@@ -1,19 +1,19 @@
-import { ViewConfig } from './../config/view.config';
+import { ViewConfig } from '../config/view.config';
 import { TranslateService } from '@ngx-translate/core';
-import { PersonalInfoModel } from './../../core/models/personal-info.model';
+import { PersonalInfoModel } from '../../core/models/personal-info.model';
 import { ResumeService } from './services/resume.service';
-import { ResumeModel } from './../../core/models/resume.model';
+import { ResumeModel } from '../../core/models/resume.model';
 import { Component, OnInit } from '@angular/core';
 import { Response } from '@angular/http';
 import { ResumeLangModel } from 'src/core/models';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-site',
-  templateUrl: './site.component.html',
-  styleUrls: ['./site.component.scss']
+  selector: 'app-resume',
+  templateUrl: './resume.component.html',
+  styleUrls: ['./resume.component.scss']
 })
-export class SiteComponent implements OnInit {
+export class ResumeComponent implements OnInit {
 
   message: string;
 
@@ -32,7 +32,7 @@ export class SiteComponent implements OnInit {
     this.route.paramMap.subscribe((params) => {
       const resumeName = params.get('name');
       const resumeLang = params.get('lang');
-      console.log('site');
+      console.log('resume');
       this.resumeService.getJSON(resumeName).subscribe((response: Response) => {
         const resume = response.json().resume;
         if (resume[resumeLang]) {

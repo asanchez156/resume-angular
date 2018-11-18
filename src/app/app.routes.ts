@@ -1,4 +1,4 @@
-import { SiteComponent } from './site/site.component';
+import { ResumeComponent } from './site/resume.component';
 import { Routes } from '@angular/router';
 
 
@@ -10,6 +10,6 @@ export const APP_ROUTES: Routes = [
   },
   {
     path: 'resume',
-    component: SiteComponent
+    component: ResumeComponent
   }
 ];

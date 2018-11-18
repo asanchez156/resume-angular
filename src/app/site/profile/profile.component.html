@@ -1,9 +1,28 @@
 <div class="container">
   <div class="title">{{ 'resume.sections.profile' | translate }}</div>
-  <div class="profile">
-    <div>{{ personalInfo.name }} {{ personalInfo.surname }}</div>
-    <div>{{ personalInfo.birthDate }}</div>
-    <div>{{ personalInfo.city }}</div>
-    <div>{{ personalExtraInfo.country }}</div>
+  <div fxLayout="row">
+
+    <div fxFlex class="profile-text">
+      <div class="profile-info-container">
+        <div class="subtitle">sub titulo  </div>
+        <div class="info">{{ personalInfo.name }} {{ personalInfo.surname }}</div>
+      </div>
+      <div class="profile-info-container">
+        <div class="subtitle">sub titulo </div>
+        <div class="info">{{ personalInfo.birthDate }}</div>
+      </div>
+      <div class="profile-info-container">
+        <div class="subtitle">sub titulo </div>
+        <div class="info">{{ personalInfo.city }}</div>
+      </div>
+      <div class="profile-info-container">
+        <div class="subtitle">sub titulo </div>
+        <div class="info">{{ personalExtraInfo.country }}</div>
+      </div>
+    </div>
+
+    <div fxFlex class="profile-photo" align="right">
+      <img [src]="'/assets/' + userName + '/' + personalInfo.image">
+    </div>
   </div>
 </div>

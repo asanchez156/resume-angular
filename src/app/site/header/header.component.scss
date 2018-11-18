@@ -1,17 +1,16 @@
 .title-full-name {
   text-align: center;
+  border-bottom:0.0625rem solid #10516e;
+  color: #2f7ca0;
+
 }
-.info {
-  margin: auto;
+.header-info-container, .header-language-container {
+  > div:not(:last-child) {
+    margin-bottom: .375rem;
+
+  }
 }
-.email, .website {
-  color: #52A9CC;
-  cursor: pointer;
-  opacity: .8;
-  &:hover {
-    opacity: 1;
-  }
-  &:active {
-    opacity: .8;
-  }
+
+.language {
+  text-align: right;
 }
