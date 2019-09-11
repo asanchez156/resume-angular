@@ -71,15 +71,16 @@ export class ResumeComponent implements OnInit {
         },
         (err: any) => {
           this.loading = false;
-          if (!resumeName) {
-            this.translateService
-              .get('error.pathUse', { resume: resumeName })
-              .subscribe((res: string) => (this.message = res));
-          } else {
-            this.translateService
-              .get('error.resumeDoNotExist', { resume: resumeName })
-              .subscribe((res: string) => (this.message = res));
-          }
+          this.router.navigate(['/resume', ViewConfig.DEFAULT_RESUME]);
+          // if (!resumeName) {
+          //   this.translateService
+          //     .get('error.pathUse', { resume: resumeName })
+          //     .subscribe((res: string) => (this.message = res));
+          // } else {
+          //   this.translateService
+          //     .get('error.resumeDoNotExist', { resume: resumeName })
+          //     .subscribe((res: string) => (this.message = res));
+          // }
         },
       );
     });
