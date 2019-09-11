@@ -7,17 +7,17 @@ body {
   margin: 0;
   background-color: #b4b4b415;
   min-width: 54rem;
-  font-family: "Google Sans",Arial,sans-serif;
+  font-family: 'Google Sans', Arial, sans-serif;
 }
 
 .click {
-  color: #52A9CC;
+  color: #52a9cc;
   cursor: pointer;
-  opacity: .8;
+  opacity: 0.8;
   &:hover {
     opacity: 1;
   }
   &:active {
-    opacity: .8;
+    opacity: 0.8;
   }
 }

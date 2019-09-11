@@ -1,4 +1,4 @@
-<app-loading-container *ngIf="loading" [loading]=loading></app-loading-container>
+<app-loading-container *ngIf="loading" [loading]="loading"></app-loading-container>
 <div class="container">
   <mat-card *ngIf="!loading && resume">
     <mat-card-title>
@@ -6,7 +6,10 @@
     </mat-card-title>
     <mat-card-content>
       <div class="section profile">
-        <app-profile [personalInfo]="resume.personalInfo" [personalExtraInfo]="resume.personalExtraInfo"></app-profile>
+        <app-profile
+          [personalInfo]="resume.personalInfo"
+          [personalExtraInfo]="resume.personalExtraInfo"
+        ></app-profile>
       </div>
       <div class="section"></div>
       <div class="section"></div>
@@ -20,6 +23,6 @@
     </mat-card-footer>
   </mat-card>
   <mat-card *ngIf="!loading && !resume">
-    {{message}}
+    {{ message }}
   </mat-card>
 </div>

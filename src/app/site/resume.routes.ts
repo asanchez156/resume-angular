@@ -1,20 +1,20 @@
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+
 import { ResumeComponent } from './resume.component';
 
 export const ROUTES: Routes = [
   {
     path: 'resume',
-    component: ResumeComponent
+    component: ResumeComponent,
   },
   {
     path: 'resume/:name/:lang',
-    component: ResumeComponent
+    component: ResumeComponent,
   },
   {
     path: 'resume/:name',
-    component: ResumeComponent
-  }
+    component: ResumeComponent,
+  },
 ];
-
 
 export const myResumeRoutes = RouterModule.forChild(ROUTES);
