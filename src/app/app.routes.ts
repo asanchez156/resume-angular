@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 
-import { ResumeComponent } from './site/resume.component';
+import { ResumeComponent } from './site/layout/resume.component';
 
 export const APP_ROUTES: Routes = [
   {

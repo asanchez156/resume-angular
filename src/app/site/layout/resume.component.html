@@ -1,0 +1,18 @@
+<app-loading-container *ngIf="loading" [loading]="loading"></app-loading-container>
+<div class="container">
+  <mat-card *ngIf="!loading && resume" fxLayout="column">
+    <mat-card-title>
+      <app-header [personalInfo]="resume.personalInfo"></app-header>
+    </mat-card-title>
+    <mat-card-content fxFlex="100%">
+      <app-profile [personalInfo]="resume.personalInfo"></app-profile>
+    </mat-card-content>
+    <mat-card-footer>
+      <app-social-networks [socialNetworks]="resume.personalInfo.contactInfo.socialNetworks"></app-social-networks>
+    </mat-card-footer>
+    <app-languages *ngIf="!print" [languages]="languages"></app-languages>
+  </mat-card>
+  <mat-card *ngIf="!loading && !resume">
+    {{ message }}
+  </mat-card>
+</div>

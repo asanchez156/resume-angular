@@ -4,7 +4,7 @@ import { forkJoin } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 export const TRANSLATE_FILES = {
-  SITE: 'site',
+  RESUME: 'resume',
 };
 
 const i18nFolder = './assets/i18n/';

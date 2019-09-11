@@ -1,0 +1,7 @@
+<div fxLayout="row" fxLayoutGap="1rem" fxLayoutAlign="center">
+  <ng-container *ngFor="let social of socialNetworks">
+    <button type="button" mat-fab color="primary" (click)="open(social)">
+      <i class="im im-{{social.id}}" matTooltip="social.name"></i>
+    </button>
+  </ng-container>
+</div>

@@ -1,23 +1,23 @@
-<div fxLayout="column">
-  <div fxFlex>
-    <h1 class="title-full-name">{{ personalInfo.name }} {{ personalInfo.surname }}</h1>
+<div fxLayout="column" fxLayoutGap="1rem">
+  <!-- fullname -->
+  <div fxFlex fxLayout="column" class="title-full-name">
+    <div class="first-name">{{ personalInfo.firstName }}</div>
+    <div class="last-name">{{ personalInfo.lastName }}</div>
   </div>
-  <div class="info" fxLayout="row" fxLayoutAlign="left start">
-    <div fxFlex class="header-info-container">
-      <div class="click" (click)="mailTo()">
-        {{ personalInfo.contactInfo.email.address }}
-      </div>
-      <div class="click" (click)="openPage()">
-        {{ website.url }}
-      </div>
+  <!-- contact -->
+  <div fxFlex fxLayout="column" fxLayoutAlign="left start">
+    <div class="click" (click)="mailTo()">
+      {{ personalInfo.contactInfo.email }}
     </div>
-    <div fxFlex class="header-language-container">
-      <div class="language click" (click)="mailTo()">
-        ES
-      </div>
-      <div class="language click" (click)="openPage()">
-        EN
-      </div>
+    <div class="click" (click)="windowRef.nativeWindow.open(this.website.url)">
+      {{ website.url }}
     </div>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center" class="role">
+    {{personalInfo.role}}
+  </div>
+  <!-- Profile photo back -->
+  <div fxFlex class="profile-photo" fxLayoutAlign="end">
+    <img [src]="'/assets/' + currentResume + '/' + personalInfo.image" />
   </div>
 </div>

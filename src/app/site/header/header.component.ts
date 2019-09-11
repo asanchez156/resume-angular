@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
+import { WindowRef } from 'src/app/shared/services/window-ref.service';
+import { IPersonalInfo } from 'src/core/interfaces';
 
-import { PersonalInfoModel } from './../../../core/models/personal-info.model';
+import { ResumeService } from '../services/resume.service';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +10,15 @@ import { PersonalInfoModel } from './../../../core/models/personal-info.model';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  @Input() personalInfo: PersonalInfoModel;
+  @Input() personalInfo: IPersonalInfo;
+
+  constructor(private resumeService: ResumeService,
+              public windowRef: WindowRef) {
+              }
+
+  get currentResume(): string {
+    return this.resumeService.activeResume;
+  }
 
   get website() {
     return this.personalInfo.contactInfo.socialNetworks[
@@ -17,9 +27,7 @@ export class HeaderComponent {
   }
 
   mailTo() {
-    window.location.href = `mailto:${this.personalInfo.contactInfo.email.address}`;
+    window.location.href = `mailto:${this.personalInfo.contactInfo.email}`;
   }
-  openPage() {
-    window.open(this.website.url);
-  }
+
 }

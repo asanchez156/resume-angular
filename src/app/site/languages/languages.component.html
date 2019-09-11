@@ -1,0 +1,5 @@
+<div *ngIf="!print" class="languages" fxLayout="column">
+  <div *ngFor="let lang of languages" class="click language" [ngClass]="{'active': activeLanguage === lang}"
+    (click)="changeLanguage(lang)">
+    {{ ('resume.languages.' + lang) | translate }}</div>
+</div>

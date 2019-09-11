@@ -1,0 +1,19 @@
+@import "src/styles/variables";
+
+.languages {
+  border-radius: 0 $border-radius $border-radius 0;
+  top: 1rem;
+  right: -5rem;
+  width: 5rem;
+  position: absolute;
+  .language {
+    padding: 1rem 1.25rem;
+    font-size: 0.75rem;
+    &.active, &:hover {
+      background-color: white;
+    }
+    &:active {
+      background-color: $resume-light-blue;
+    }
+  }
+}

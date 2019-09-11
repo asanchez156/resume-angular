@@ -1,0 +1,11 @@
+export { IEducationalBackground } from './educational-background.interface';
+export { ILinguisticSkill } from './linguistic-skill.interface';
+export { IOtherInfo } from './otherInfo.interface';
+export { IPersonalExtraInfo } from './personal-extra-info.interface';
+export { IProfessionalExperience } from './professional-experience.interface';
+export { IResumeLang } from './resume-lang.interface';
+export { IResume } from './resume.interface';
+export { IVehicle } from './vehicle.interface';
+export { ISocialNetwork } from './social-network.interface';
+export { IContactInfo } from './contact-info.interface';
+export { IPersonalInfo } from './personal-info.interface';
