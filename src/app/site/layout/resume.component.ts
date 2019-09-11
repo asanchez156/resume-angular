@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Response } from '@angular/http';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { ViewConfig } from 'src/app/config/view.config';
 import { IResume, IResumeLang } from 'src/core/interfaces';
@@ -30,6 +30,7 @@ export class ResumeComponent implements OnInit {
     private resumeService: ResumeService,
     private translateService: TranslateService,
     private route: ActivatedRoute,
+    private router: Router,
   ) {}
 
   ngOnInit() {
@@ -39,29 +40,34 @@ export class ResumeComponent implements OnInit {
       const resumeLang = params.get('lang');
       this.resumeService.getJSON(resumeName).subscribe(
         (response: Response) => {
-          const resume = response.json().resume as IResume;
-          let resumeLanguage = this.getLanguageById(resume.languages, resumeLang);
-          // check if the language is in the resume
-          if (resumeLanguage) {
-            this.resumeService.activeLanguage = ViewConfig.SUPPORTED_LANGUAGES[resumeLang]
-              ? resumeLang
-              : ViewConfig.DEFAULT_LANG;
+          try {
+            const resume = response.json().resume as IResume;
+            let resumeLanguage = this.getLanguageById(resume.languages, resumeLang);
+            // check if the language is in the resume
+            if (resumeLanguage) {
+              this.resumeService.activeLanguage = ViewConfig.SUPPORTED_LANGUAGES[resumeLang]
+                ? resumeLang
+                : ViewConfig.DEFAULT_LANG;
+            }
+            this.translateService.use(this.activeLanguage);
+            // get resume language and add personal info;
+            resumeLanguage = this.getLanguageById(
+              resume.languages,
+              this.resumeService.activeLanguage,
+            );
+            this._resume = resumeLanguage;
+            this._resume.personalInfo = resume.personalInfo;
+
+            this.languages = resume.languages.reduce(
+              (languages: string[], currentValue: IResumeLang) =>
+                languages.concat([currentValue.id]),
+              [],
+            );
+
+            this.loading = false;
+          } catch (error) {
+            this.router.navigate(['../', ViewConfig.DEFAULT_RESUME]);
           }
-          this.translateService.use(this.activeLanguage);
-          // get resume language and add personal info;
-          resumeLanguage = this.getLanguageById(
-            resume.languages,
-            this.resumeService.activeLanguage,
-          );
-          this._resume = resumeLanguage;
-          this._resume.personalInfo = resume.personalInfo;
-
-          this.languages = resume.languages.reduce(
-            (languages: string[], currentValue: IResumeLang) => languages.concat([currentValue.id]),
-            [],
-          );
-
-          this.loading = false;
         },
         (err: any) => {
           this.loading = false;
