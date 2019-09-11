@@ -1,15 +1,15 @@
-import { ResumeComponent } from './site/resume.component';
 import { Routes } from '@angular/router';
 
+import { ResumeComponent } from './site/resume.component';
 
 export const APP_ROUTES: Routes = [
   {
     path: '',
     redirectTo: 'resume',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'resume',
-    component: ResumeComponent
-  }
+    component: ResumeComponent,
+  },
 ];

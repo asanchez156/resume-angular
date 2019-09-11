@@ -1,0 +1,4 @@
+{
+  "*.{scss,ts}": ["prettier --config .prettierrc --write", "git add"],
+  "*.{component.html}": ["prettier --parser angular --write", "git add"]
+}

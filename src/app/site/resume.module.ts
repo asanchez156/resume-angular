@@ -1,13 +1,15 @@
-import { ResumeService } from './services/resume.service';
-import { SharedModule } from '../shared/shared.module';
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ResumeComponent } from './resume.component';
+import { NgModule } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
+import { TranslateModule } from '@ngx-translate/core';
+
+import { SharedModule } from '../shared/shared.module';
+
 import { HeaderComponent } from './header/header.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ResumeComponent } from './resume.component';
 import { myResumeRoutes } from './resume.routes';
-import { TranslateModule } from '@ngx-translate/core';
+import { ResumeService } from './services/resume.service';
 
 @NgModule({
   imports: [
@@ -17,15 +19,9 @@ import { TranslateModule } from '@ngx-translate/core';
     // routes
     myResumeRoutes,
     // translate
-    TranslateModule
+    TranslateModule,
   ],
-  declarations: [
-    ResumeComponent,
-    HeaderComponent,
-    ProfileComponent
-  ],
-  providers: [
-    ResumeService
-  ]
+  declarations: [ResumeComponent, HeaderComponent, ProfileComponent],
+  providers: [ResumeService],
 })
-export class ResumeModule { }
+export class ResumeModule {}

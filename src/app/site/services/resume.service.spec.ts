@@ -1,11 +1,11 @@
-import { TestBed, inject } from '@angular/core/testing';
+import { inject, TestBed } from '@angular/core/testing';
 
 import { ResumeService } from './resume.service';
 
 describe('ResumeService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ResumeService]
+      providers: [ResumeService],
     });
   });
 
