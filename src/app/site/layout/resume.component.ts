@@ -66,7 +66,7 @@ export class ResumeComponent implements OnInit {
 
             this.loading = false;
           } catch (error) {
-            this.router.navigate(['../', ViewConfig.DEFAULT_RESUME]);
+            this.router.navigate(['/resume', ViewConfig.DEFAULT_RESUME]);
           }
         },
         (err: any) => {
