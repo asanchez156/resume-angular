@@ -8,7 +8,7 @@ describe('LanguagesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LanguagesComponent ]
+      declarations: [ LanguagesComponent ],
     })
     .compileComponents();
   }));

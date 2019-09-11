@@ -8,7 +8,7 @@ describe('SocialNetworksComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SocialNetworksComponent ]
+      declarations: [ SocialNetworksComponent ],
     })
     .compileComponents();
   }));
