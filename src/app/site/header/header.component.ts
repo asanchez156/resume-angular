@@ -12,9 +12,7 @@ import { ResumeService } from '../services/resume.service';
 export class HeaderComponent {
   @Input() personalInfo: IPersonalInfo;
 
-  constructor(private resumeService: ResumeService,
-              public windowRef: WindowRef) {
-              }
+  constructor(private resumeService: ResumeService, public windowRef: WindowRef) {}
 
   get currentResume(): string {
     return this.resumeService.activeResume;
@@ -27,7 +25,6 @@ export class HeaderComponent {
   }
 
   mailTo() {
-    window.location.href = `mailto:${this.personalInfo.contactInfo.email}`;
+    this.windowRef.nativeWindow.location.href = `mailto:${this.personalInfo.contactInfo.email}`;
   }
-
 }

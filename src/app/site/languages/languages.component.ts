@@ -13,7 +13,6 @@ export class LanguagesComponent {
 
   constructor(private resumeService: ResumeService,
               private router: Router) {
-    console.log('LANG', this.activeLanguage);
   }
 
   get activeLanguage(): string {

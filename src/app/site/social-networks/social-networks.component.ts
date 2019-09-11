@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { WindowRef } from 'src/app/shared/services/window-ref.service';
 import { ISocialNetwork } from 'src/core/interfaces';
 
 @Component({
@@ -9,7 +10,5 @@ import { ISocialNetwork } from 'src/core/interfaces';
 export class SocialNetworksComponent {
   @Input() socialNetworks: ISocialNetwork[];
 
-  open(social: ISocialNetwork) {
-    window.open(social.url);
-  }
+  constructor(public windowRef: WindowRef) {}
 }

@@ -9,5 +9,6 @@ import { IPersonalInfo } from 'src/core/interfaces';
 })
 export class ProfileComponent {
   @Input() personalInfo: IPersonalInfo;
+
   constructor(public windowRef: WindowRef) {}
 }

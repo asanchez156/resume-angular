@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { SharedModule } from '../shared/shared.module';
@@ -24,6 +26,8 @@ import { SocialNetworksComponent } from './social-networks/social-networks.compo
     MatCardModule,
     MatButtonModule,
     MatTabsModule,
+    MatTooltipModule,
+    BrowserAnimationsModule,
 
     // routes
     myResumeRoutes,

@@ -25,7 +25,7 @@
     "pathUse": "Go to: 'resume/resume-name/lang'"
   },
   "maintenance": {
-    "status": "En mantenimiento",
-    "seeMiOldCV": "Ver version anterior del curriculum en:"
+    "status": "Under maintenance",
+    "seeMiOldCV": "See the previous resume's version in:"
   }
 }
